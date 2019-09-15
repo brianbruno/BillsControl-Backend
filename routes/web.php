@@ -23,5 +23,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/contas', 'ContaController@condas');
+Route::post('/contas', 'ContaController@contas');
 Route::post('/contas/adicionar', 'ContaController@criarConta');
+Route::post('/ping', 'ContaController@ping');

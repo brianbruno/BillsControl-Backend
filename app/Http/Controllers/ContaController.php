@@ -42,13 +42,14 @@ class ContaController {
         try {
 
             $userid = $request->user_id;
-            $nomeContta = $request->nomeConta;
+            $nomeConta = $request->nomeConta;
             $codigoBarras = $request->codigoBarras;
             $dataVencimento = $request->dataVencimento;
+            $imagem = $request->imagem;
 
             $conta = new Conta();
             $conta->user_id = $userid;
-            $conta->nome_conta = $nomeContta;
+            $conta->nome_conta = $nomeConta;
             $conta->vencimento = $dataVencimento;
             $conta->codigo_barras = $codigoBarras;
 
@@ -63,6 +64,10 @@ class ContaController {
 
 
         return response()->json($resultado);
+    }
+
+    public function ping() {
+        return "gui te amo";
     }
 
 }
